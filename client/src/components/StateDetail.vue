@@ -7,6 +7,13 @@
         <div>
             <input class="visit-state" type="checkbox" v-model="visited" v-on:change="visitedChanged">
         </div>
+
+        <div>
+            <!--The line below generates our URL for a specific state-->
+            <router-link v-bind:to=" {name: 'StateMap', params: {state: state.name } }">
+                <img class="map-icon" src="@/assets/mapicon.png">
+            </router-link>
+        </div>
     
     </div>
 
@@ -52,6 +59,11 @@ export default {
 .visit-state {
     margin: 1rem;
     text-align: center;
+}
+
+.map-icon {
+    width: 2rem;
+    height: 2rem;
 }
 
 </style>
