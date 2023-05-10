@@ -3,8 +3,12 @@
 
 let express = require('express')
 let states_api = require('./routes/states')
+let path = require('path')
 
 let app = express()
+
+let vueAppPath = path.join(__dirname, 'client', 'dist')
+app.use(express.static(vueAppPath))
 
 // below line allows the server to recieve and process messages in JSON format
 app.use(express.json())
